@@ -49,7 +49,7 @@ body {
     .header-wrap {
         margin: 0 auto;
         width: 80%;
-        padding-right: 30%;
+        padding-right: 38%;
 
         .landing-logo {
             color: $logo-color;
@@ -167,7 +167,6 @@ body {
                 width: max-content;
                 position: relative;
 
-
                 .section_card_underline {
                     height: 14px;
                     background-color: $line-color;
@@ -204,6 +203,7 @@ body {
         .section_banner_text_wrap {
             .section_banner_heading {
                 font-size: 36px;
+                line-height: 36px;
                 font-weight: 800;
                 font-family: $heading-font-family;
                 color: $banner-heading-font-color;
@@ -211,11 +211,11 @@ body {
                 position: relative;
                 display: inline-block;
 
-                ::before {
+                &::before {
                     @include line;
-                    width: 365px;
-                    height: 30px;
-                    left: 0;
+                    width: 80px;
+                    height: 14px;
+                    left: 143px;
                 }
             }
 

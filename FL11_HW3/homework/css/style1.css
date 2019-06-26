@@ -33,7 +33,7 @@ body {
   .header .header-wrap {
     margin: 0 auto;
     width: 80%;
-    padding-right: 30%; }
+    padding-right: 38%; }
     .header .header-wrap .landing-logo {
       color: #2c2f3c; }
     .header .header-wrap .header_heading {
@@ -154,21 +154,22 @@ body {
     align-items: flex-end; }
     .section .section_banner .section_banner_text_wrap .section_banner_heading {
       font-size: 36px;
+      line-height: 36px;
       font-weight: 800;
       font-family: "Source Sans Pro", sans-serif;
       color: #000;
       margin: 0 0 20px;
       position: relative;
       display: inline-block; }
-      .section .section_banner .section_banner_text_wrap .section_banner_heading ::before {
+      .section .section_banner .section_banner_text_wrap .section_banner_heading::before {
         content: '';
         background-color: #14a0c7;
         position: absolute;
         z-index: -1;
         bottom: 0;
-        width: 365px;
-        height: 30px;
-        left: 0; }
+        width: 80px;
+        height: 14px;
+        left: 143px; }
     .section .section_banner .section_banner_text_wrap .section_banner_text {
       color: #c0c3ce;
       margin: 0;
