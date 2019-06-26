@@ -11,6 +11,7 @@ html {
 body {
     margin: 0;
     position: relative;
+    background-color: $body-backgrund;
 }
 
 @mixin line {
@@ -49,6 +50,10 @@ body {
         margin: 0 auto;
         width: 80%;
         padding-right: 30%;
+
+        .landing-logo {
+            color: $logo-color;
+        }
 
         .header_heading {
             font-size: 86px;
@@ -89,25 +94,23 @@ body {
     padding-top: 25px;
     margin-bottom: 100px;
     font-family: $paragraph-font-family;
-    color: $logo-color;
 
     img {
-        margin-right: 25px;
+        margin-right: 10px;
         width: 56px;
         height: 56px;
     }
 
     p {
-        margin: 0;
+        margin: 8px 0;
         text-align: center;
         font-weight: 600;
         font-size: map-get($logo-text, $key: logo);
-
+        line-height: 22px;
 
         span {
             font-size: 10px;
             display: block;
-            font-weight: 600;
             font-size: map-get($logo-text, $key: sub-logo);
         }
     }
@@ -141,13 +144,12 @@ body {
         justify-content: space-between;
 
         .section_card {
-            width: 33%;
+            width: 32%;
             padding: 24px;
             background-color: $dark-background;
             border-radius: $border-radius;
             display: flex;
             flex-direction: column;
-            text-align: center;
 
             .section_card_img {
                 width: 100%;
@@ -158,6 +160,7 @@ body {
                 margin-left: 50%;
                 transform: translateX(-50%);
                 font-size: 24px;
+                line-height: 28px;
                 color: #fff;
                 font-weight: 800;
                 z-index: 2;
@@ -170,7 +173,7 @@ body {
                     background-color: $line-color;
                     z-index: -1;
                     position: absolute;
-                    bottom: 5px;
+                    bottom: 0;
                     right: 0;
                     width: 100%;
                 }
@@ -203,12 +206,23 @@ body {
                 font-size: 36px;
                 font-weight: 800;
                 font-family: $heading-font-family;
+                color: $banner-heading-font-color;
                 margin: 0 0 20px;
+                position: relative;
+                display: inline-block;
+
+                ::before {
+                    @include line;
+                    width: 365px;
+                    height: 30px;
+                    left: 0;
+                }
             }
 
             .section_banner_text {
                 color: $light-font-color;
                 margin: 0;
+                text-align: left;
             }
         }
 
@@ -220,7 +234,6 @@ body {
 
 .footer {
     background-color: $dark-background;
-    color: $light-font-color;
     font-size: 16px;
     font-family: $paragraph-font-family;
 
@@ -239,6 +252,7 @@ body {
             width: 350px;
             margin: 0;
             padding: 0;
+            color: $light-font-color;
         }
 
         .footer-cr {

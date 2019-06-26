@@ -8,7 +8,8 @@ html {
 
 body {
   margin: 0;
-  position: relative; }
+  position: relative;
+  background-color: #fff; }
 
 .header .header-wrap .header_button, .section .section_banner .section_banner_button {
   background-color: #699900;
@@ -33,6 +34,8 @@ body {
     margin: 0 auto;
     width: 80%;
     padding-right: 30%; }
+    .header .header-wrap .landing-logo {
+      color: #2c2f3c; }
     .header .header-wrap .header_heading {
       font-size: 86px;
       font-weight: 900;
@@ -65,21 +68,20 @@ body {
   justify-content: flex-start;
   padding-top: 25px;
   margin-bottom: 100px;
-  font-family: "Hind", sans-serif;
-  color: #2c2f3c; }
+  font-family: "Hind", sans-serif; }
   .landing-logo img {
-    margin-right: 25px;
+    margin-right: 10px;
     width: 56px;
     height: 56px; }
   .landing-logo p {
-    margin: 0;
+    margin: 8px 0;
     text-align: center;
     font-weight: 600;
-    font-size: 22px; }
+    font-size: 22px;
+    line-height: 22px; }
     .landing-logo p span {
       font-size: 10px;
-      display: block;
-      font-weight: 600; }
+      display: block; }
 
 .section {
   margin-bottom: 260px;
@@ -107,13 +109,12 @@ body {
     display: flex;
     justify-content: space-between; }
     .section .section_card_wrap .section_card {
-      width: 33%;
+      width: 32%;
       padding: 24px;
       background-color: #21232e;
       border-radius: 5px;
       display: flex;
-      flex-direction: column;
-      text-align: center; }
+      flex-direction: column; }
       .section .section_card_wrap .section_card .section_card_img {
         width: 100%;
         margin: 0; }
@@ -121,6 +122,7 @@ body {
         margin-left: 50%;
         transform: translateX(-50%);
         font-size: 24px;
+        line-height: 28px;
         color: #fff;
         font-weight: 800;
         z-index: 2;
@@ -131,7 +133,7 @@ body {
           background-color: #14a0c7;
           z-index: -1;
           position: absolute;
-          bottom: 5px;
+          bottom: 0;
           right: 0;
           width: 100%; }
       .section .section_card_wrap .section_card .section_card_text {
@@ -154,14 +156,26 @@ body {
       font-size: 36px;
       font-weight: 800;
       font-family: "Source Sans Pro", sans-serif;
-      margin: 0 0 20px; }
+      color: #000;
+      margin: 0 0 20px;
+      position: relative;
+      display: inline-block; }
+      .section .section_banner .section_banner_text_wrap .section_banner_heading ::before {
+        content: '';
+        background-color: #14a0c7;
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        width: 365px;
+        height: 30px;
+        left: 0; }
     .section .section_banner .section_banner_text_wrap .section_banner_text {
       color: #c0c3ce;
-      margin: 0; }
+      margin: 0;
+      text-align: left; }
 
 .footer {
   background-color: #21232e;
-  color: #c0c3ce;
   font-size: 16px;
   font-family: "Hind", sans-serif; }
   .footer .footer-wrap {
@@ -177,7 +191,8 @@ body {
     .footer .footer-wrap .footer-cr {
       width: 350px;
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      color: #c0c3ce; }
     .footer .footer-wrap .footer-cr {
       text-align: right; }
 
