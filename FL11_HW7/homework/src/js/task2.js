@@ -1,49 +1,48 @@
 'use strict'
 
-let play = confirm('Do you want to play a game?');
 let max = 8;
 const addNumb = 4;
 const min = 0;
-let userNumb;
 let randomInt;
 let maxPrize = 100;
 const multPrize = 2;
-const loss = 0;
+const prizeDiv = 2;
 let prize = 0;
 let totalPrize = 0;
+let play = confirm('Do you want to play a game?');
 
 if (!play) {
     alert('You did not become a billionaire, but can.');
 } else {
     for (;;) {
         let attempt = 3;
-        totalPrize = totalPrize + prize;
-        randomInt = Math.floor(Math.random() * (max - min + 1) + min);
+        randomInt = Math.floor(Math.random() * (max + 1));
         console.log(randomInt);
-        for (let j = 0; j < attempt; j += 1) {
-            userNumb = +prompt(`Choose a roulette pocket number from 0 to 8
-        Attempts left: ${attempt-j}
-        Total prize: ${totalPrize}$
-        Possible prize on current attempt: ${maxPrize}$`);
-
-            if (userNumb === randomInt && j < attempt) {
-                totalPrize = maxPrize;
-
-            } else if (userNumb !== randomInt && j > attempt) {
-                totalPrize = loss;
-                alert(`Thank you for your participation. Your prize is: ${totalPrize}$`);
-                confirm('Do you want to play again?');
+        prize = maxPrize;
+        for (let i = 0; i < attempt; i += 1) {
+            let userNumb = +prompt(`Choose a roulette pocket number from 0 to ${max}
+            Attempts left: ${attempt-i}
+            Total prize: ${totalPrize}$
+            Possible prize on current attempt: ${prize}$`);
+            if (userNumb === randomInt) {
+                totalPrize += prize;
+                play = confirm(`Congratulation, you won! Your prize is: ${totalPrize} $. Do you want to continue?`);
+                max += addNumb;
+                maxPrize *= multPrize;
+                break;
+            } else if (userNumb !== randomInt && attempt > 0) {
+                prize /= prizeDiv;
+            } else if (userNumb !== randomInt && attempt === 0) {
+                totalPrize = 0;
+                break;
             }
-            maxPrize = maxPrize / multPrize;
         }
-        play = confirm(`Congratulation, you won!   Your prize is: ${totalPrize}$. Do you want to continue?`);
+        play = confirm('Do you want to play again?');
         if (!play) {
             alert(`Thank you for your participation. Your prize is: ${totalPrize}$`);
             break;
         }
-        prize = maxPrize;
-        maxPrize = maxPrize * multPrize;
-        max += addNumb;
-    }
 
+
+    }
 }

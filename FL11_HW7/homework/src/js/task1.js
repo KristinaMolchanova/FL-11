@@ -39,28 +39,27 @@ switch (true) {
         break;
     case userEmail === usersData[0].email || userEmail === usersData[1].email:
         userPassword = prompt('Enter your password');
+        switch (true) { // Password check
+            case userPassword === '' || userPassword === null:
+                alert(NOTIFICATION.CANCELED);
+                break;
+            case userPassword === usersData[0].password && userEmail === usersData[0].email:
+                newPassword = confirm(NOTIFICATION.SUGGESTION_CHANGE_PASS);
+                break;
+            case userPassword === usersData[1].password && userEmail === usersData[1].email:
+                newPassword = confirm(NOTIFICATION.SUGGESTION_CHANGE_PASS);
+                break;
+            default:
+                alert(NOTIFICATION.WRONG_PASS);
+                break;
+        }
         break;
     default:
         alert(NOTIFICATION.UNKNOWN_USER);
         break;
 }
 
-// Password check
 
-switch (true) {
-    case userPassword === '' || userPassword === null:
-        alert(NOTIFICATION.CANCELED);
-        break;
-    case userPassword === usersData[0].password && userEmail === usersData[0].email:
-        newPassword = confirm(NOTIFICATION.SUGGESTION_CHANGE_PASS);
-        break;
-    case userPassword === usersData[1].password && userEmail === usersData[1].email:
-        newPassword = confirm(NOTIFICATION.SUGGESTION_CHANGE_PASS);
-        break;
-    default:
-        alert(NOTIFICATION.WRONG_PASS);
-        break;
-}
 // Changing password
 
 switch (true) {
@@ -85,7 +84,7 @@ switch (true) {
         }
         break;
     default:
-        alert(NOTIFICATION.PASS_SUCCESS);
+
         break;
 }
 
@@ -98,11 +97,10 @@ switch (true) {
         break;
     default:
         userPassword = prompt('Confirm password');
+        if (userPassword !== newPassword) {
+            alert(NOTIFICATION.WRONG_PASS);
+        } else {
+            alert(NOTIFICATION.PASS_SUCCESS);
+        }
         break;
-}
-
-if (userPassword !== newPassword) {
-    alert(NOTIFICATION.WRONG_PASS);
-} else {
-    alert(NOTIFICATION.PASS_SUCCESS);
 }
