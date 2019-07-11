@@ -1,12 +1,11 @@
 'use strict'
 
-let max = 8;
 const addNumb = 4;
-const min = 0;
-let randomInt;
-let maxPrize = 100;
 const multPrize = 2;
 const prizeDiv = 2;
+let max = 8;
+let randomInt;
+let maxPrize = 100;
 let prize = 0;
 let totalPrize = 0;
 let play = confirm('Do you want to play a game?');
@@ -42,7 +41,5 @@ if (!play) {
             alert(`Thank you for your participation. Your prize is: ${totalPrize}$`);
             break;
         }
-
-
     }
 }

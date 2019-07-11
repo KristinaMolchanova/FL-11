@@ -29,7 +29,6 @@ const minEmailLength = 6;
 const minPasswordLength = 5;
 
 //Email check
-
 switch (true) {
     case userEmail === '' || userEmail === null:
         alert(NOTIFICATION.CANCELED);
@@ -59,9 +58,7 @@ switch (true) {
         break;
 }
 
-
-// Changing password
-
+// Password changing 
 switch (true) {
     case newPassword === '' || newPassword === null:
         alert(NOTIFICATION.FAILED_PASS_CHANGE);
@@ -84,7 +81,6 @@ switch (true) {
         }
         break;
     default:
-
         break;
 }
 
