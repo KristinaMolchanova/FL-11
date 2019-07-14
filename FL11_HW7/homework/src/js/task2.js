@@ -13,7 +13,7 @@ let play = confirm('Do you want to play a game?');
 if (!play) {
     alert('You did not become a billionaire, but can.');
 } else {
-    for (;;) {
+    while (true) {
         let attempt = 3;
         randomInt = Math.floor(Math.random() * (max + 1));
         console.log(randomInt);
