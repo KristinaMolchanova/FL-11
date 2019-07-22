@@ -1,11 +1,13 @@
 'use strict'
 
-let wins = 0;
-let loss = 0;
+// let wins = 0;
+// let loss = 0;
 
 class Fighter {
     constructor(props = {}) {
         this.props = props;
+        this.props.wins = 0;
+        this.props.loss = 0;
     }
 
     getName() {
@@ -35,11 +37,11 @@ class Fighter {
     }
 
     addWin() {
-        return wins++;
+        return this.props.wins++;
     }
 
     addLoss() {
-        return loss++;
+        return this.props.loss++;
     }
 
     attack(defender) {
@@ -55,7 +57,7 @@ class Fighter {
     }
 
     logCombatHistory() {
-        return `Name: ${this.getName()}, Wins: ${this.addWin()}, Losses: ${this.addLoss()}`
+        return `Name: ${this.getName()}, Wins: ${this.props.wins}, Losses: ${this.props.loss}`
     }
 }
 
@@ -66,12 +68,14 @@ function battle(firstFighter, secondFighter) {
         return `${secondFighter.getName()} is dead and can't fight.`;
     }
 
-    while (firstFighter.props.hp > 0 && secondFighter.props.hp > 0) {
+    while (firstFighter.props.hp !== 0 && secondFighter.props.hp !== 0) {
         console.log(firstFighter.attack(secondFighter));
+        console.log(firstFighter.props.hp);
         console.log(secondFighter.attack(firstFighter));
+        console.log(secondFighter.props.hp);
     }
 
-    if (firstFighter.props.hp === 0) {
+    if (firstFighter.props.hp === 0 && secondFighter.props.hp !== 0) {
         firstFighter.addLoss();
         secondFighter.addWin();
     } else {
@@ -79,3 +83,16 @@ function battle(firstFighter, secondFighter) {
         firstFighter.addWin();
     }
 }
+
+const fighter1 = new Fighter({
+    name: 'John',
+    damage: 40,
+    hp: 100,
+    agility: 25
+});
+const fighter2 = new Fighter({
+    name: 'Jim',
+    damage: 50,
+    hp: 120,
+    agility: 25
+});
