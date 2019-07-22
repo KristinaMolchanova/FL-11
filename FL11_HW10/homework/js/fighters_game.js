@@ -1,8 +1,5 @@
 'use strict'
 
-// let wins = 0;
-// let loss = 0;
-
 class Fighter {
     constructor(props = {}) {
         this.props = props;
